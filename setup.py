@@ -89,12 +89,12 @@ def make_apks():
 		for filename in filenames:
 			if (fnmatch.fnmatch(filename, "*.java")):
 				#Compile java
-				javac_cmd = ['javac', '-cp', lib+'android.jar', filename]
+				javac_cmd = ['javac', '--release 7','-cp', lib+'android.jar', filename]
 
 				#Build apk
 				m = re.search('(.+?)(\.[^.]*$|$)',filename)
 				dx_cmd = [lib+dx, '--dex', '--output='+m.group(1)+'.apk',m.group(1)+'*.class']
-
+				print(filename)
 				if platform == "linux2" or platform == "linux" or platform == "darwin":
 					subprocess.call(' '.join(javac_cmd),shell=True,cwd=root)
 
@@ -119,7 +119,7 @@ def get_package_data():
 
 setuptools.setup(
   name = meta.name,
-  version = '2.4.4',
+  version = '2.4.5',
   author = meta.vendor,
   author_email = meta.contact,
   description = meta.description,
@@ -134,6 +134,6 @@ setuptools.setup(
                     "pydiesel": "src/pydiesel" },
   package_data = get_package_data(),
   scripts = get_executable_scripts(),
-  install_requires = ["protobuf>=2.6.1","pyopenssl>=16.2", "pyyaml>=3.11"],
+  install_requires = ["protobuf>=3","pyopenssl>=20", "pyyaml>=5", "service_identity>=21"],
   data_files = get_install_data(),
   classifiers = [])

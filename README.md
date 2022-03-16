@@ -8,10 +8,6 @@ We would like to formely announce that F-Secure has stopped further development 
 
 However, we still think drozer is a good tool for simulating a rogue application. A penetration tester does not have to develop an app with custom code to interface with a specific content provider. Instead, drozer can be used with little to no programming experience required to show the impact of letting certain components be exported on a device.
 
-To help with making sure drozer can be ran on modern systems, a Docker container was created that has a working build of Drozer.
-
-* The Docker container can be found here: https://hub.docker.com/r/fsecurelabs/drozer
-* Instructions on building your own Docker container can be found here: https://github.com/FSecureLABS/drozer/tree/develop/docker
 
 ## ----------------------------------------------------------------
 
@@ -25,38 +21,23 @@ drozer is open source software, maintained by MWR InfoSecurity, and can be downl
 
 
 ## Build Status
-
-### Linux / OSX
-
-#### Develop:
-
-[![Build Status](https://travis-ci.org/mwrlabs/drozer.svg?branch=develop)](https://travis-ci.org/mwrlabs/drozer)
-
-#### Master:
-
-[![Build Status](https://travis-ci.org/mwrlabs/drozer.svg?branch=master)](https://travis-ci.org/mwrlabs/drozer)
-
-### Windows
-
-[![Build status](https://ci.appveyor.com/api/projects/status/9d4f3qx2sn2yf8tm/branch/develop?svg=true)](https://ci.appveyor.com/project/HenryHoggard/drozer/branch/develop)
+``//TODO``
 
 ## Prerequisites
 
-1. [Python2.7](https://www.python.org/downloads/)
+1. [Python3](https://www.python.org/downloads/)
 
 **Note: On Windows please ensure that the path to the Python installation and the Scripts folder under the Python installation are added to the PATH environment variable.**
 
-2. [Protobuf](https://pypi.python.org/pypi/protobuf) 2.6 or greater
+2. [Protobuf](https://pypi.python.org/pypi/protobuf) 3 or greater
 
-3. [Pyopenssl](https://pypi.python.org/pypi/pyOpenSSL) 16.2 or greater
+3. [Pyopenssl](https://pypi.python.org/pypi/pyOpenSSL) 15 or greater
 
-4. [Twisted](https://pypi.python.org/pypi/Twisted) 10.2 or greater
-
-5. [Java Development Kit 1.7](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html) 
+5. [Java Development Kit 1.8 or greater](https://www.oracle.com/java/technologies/downloads/archive/)
 
 **Note: On Windows please ensure that the path to javac.exe is added to the PATH environment variable.**
 
-6. [Android Debug Bridge](https://developer.android.com/studio/releases/platform-tools.html)
+6. [Android Debug Bridge (Platform tools)](https://developer.android.com/studio/releases/platform-tools.html)
 
 
 ## Installing
@@ -85,7 +66,7 @@ make deb
 
 ### Installing .deb (Debian/Ubuntu/Mint)
 
-``` 
+```
 sudo dpkg -i drozer-2.x.x.deb
 ```
 
@@ -115,12 +96,12 @@ python.exe setup.py bdist_msi
 
 ### Installing .msi (Windows)
 
-``` 
-Run dist/drozer-2.x.x.win-x.msi 
+```
+Run dist/drozer-2.x.x.win-x.msi
 
 ```
 
-### Installing (Arch Linux/BlackArch)
+### Installing (Arch Linux/BlackArch) [deprecated]
 
 On BlackArch or any Arch-based linux distribution where BlackArch repository was enabled:
 
@@ -146,6 +127,11 @@ Download the latest Drozer Agent [here](https://github.com/FSecureLABS/drozer/re
 
 `$ adb install drozer-agent-2.x.x.apk`
 
+##### OR
+
+Build from commandline
+
+`$ drozer agent build`
 
 ### Starting a Session
 
@@ -195,19 +181,19 @@ You are now ready to start exploring the device.
 | Command        | Description           |
 | ------------- |:-------------|
 | run  | Executes a drozer module
-| list | Show a list of all drozer modules that can be executed in the current session. This hides modules that you do not have suitable permissions to run. | 
-| shell | Start an interactive Linux shell on the device, in the context of the Agent process. | 
-| cd | Mounts a particular namespace as the root of session, to avoid having to repeatedly type the full name of a module. | 
-| clean | Remove temporary files stored by drozer on the Android device. | 
-| contributors | Displays a list of people who have contributed to the drozer framework and modules in use on your system. | 
-| echo | Print text to the console. | 
-| exit | Terminate the drozer session. | 
-| help | Display help about a particular command or module. | 
-| load | Load a file containing drozer commands, and execute them in sequence. | 
-| module | Find and install additional drozer modules from the Internet. | 
-| permissions | Display a list of the permissions granted to the drozer Agent. | 
-| set | Store a value in a variable that will be passed as an environment variable to any Linux shells spawned by drozer. | 
-| unset | Remove a named variable that drozer passes to any Linux shells that it spawns. | 
+| list | Show a list of all drozer modules that can be executed in the current session. This hides modules that you do not have suitable permissions to run. |
+| shell | Start an interactive Linux shell on the device, in the context of the Agent process. |
+| cd | Mounts a particular namespace as the root of session, to avoid having to repeatedly type the full name of a module. |
+| clean | Remove temporary files stored by drozer on the Android device. |
+| contributors | Displays a list of people who have contributed to the drozer framework and modules in use on your system. |
+| echo | Print text to the console. |
+| exit | Terminate the drozer session. |
+| help | Display help about a particular command or module. |
+| load | Load a file containing drozer commands, and execute them in sequence. |
+| module | Find and install additional drozer modules from the Internet. |
+| permissions | Display a list of the permissions granted to the drozer Agent. |
+| set | Store a value in a variable that will be passed as an environment variable to any Linux shells spawned by drozer. |
+| unset | Remove a named variable that drozer passes to any Linux shells that it spawns. |
 
 ## License
 
@@ -220,5 +206,7 @@ drozer is Open Source software, made great by contributions from the community.
 For full source code, to report bugs, suggest features and contribute patches please see our Github project:
 
   <https://github.com/FSecureLABS/drozer>
+
+  <https://github.com/OneGameKoTT/drozer-py3>
 
 Bug reports, feature requests, comments and questions can be submitted [here](https://github.com/FSecureLABS/drozer/issues).

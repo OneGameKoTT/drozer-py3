@@ -4,9 +4,6 @@ import sys
 import os
 import distro
 
-if distro.linux_distribution()[0] in ["Fedora", "CentOS Linux"]:
-    os.putenv("TERM", "vt100")
-
 Commands = {    'agent': 'create custom drozer Agents',
                 'console': 'start the drozer Console',
                 'exploit': 'generate an exploit to deploy drozer',
@@ -14,7 +11,7 @@ Commands = {    'agent': 'create custom drozer Agents',
                 'payload': 'generate payloads to deploy drozer',
                 'server': 'start a drozer Server',
                 'ssl': 'manage drozer SSL key material' }
-    
+
 def print_usage():
     print("usage: drozer [COMMAND]")
     print()

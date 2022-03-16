@@ -11,7 +11,7 @@ from google.protobuf import descriptor_pb2
 DESCRIPTOR = descriptor.FileDescriptor(
   name='protobuf.proto',
   package='com.mwr.diesel.api',
-  serialized_pb='\n\x0eprotobuf.proto\x12\x12\x63om.mwr.diesel.api\"\x80\x1e\n\x07Message\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x35\n\x04type\x18\x02 \x02(\x0e\x32\'.com.mwr.diesel.api.Message.MessageType\x12\x41\n\x0esystem_request\x18\x05 \x01(\x0b\x32).com.mwr.diesel.api.Message.SystemRequest\x12\x43\n\x0fsystem_response\x18\x06 \x01(\x0b\x32*.com.mwr.diesel.api.Message.SystemResponse\x12I\n\x12reflection_request\x18\x07 \x01(\x0b\x32-.com.mwr.diesel.api.Message.ReflectionRequest\x12K\n\x13reflection_response\x18\x08 \x01(\x0b\x32..com.mwr.diesel.api.Message.ReflectionResponse\x1a\x93\n\n\x11ReflectionRequest\x12\x12\n\nsession_id\x18\x01 \x02(\t\x12G\n\x04type\x18\x02 \x02(\x0e\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.RequestType\x12\x46\n\x07resolve\x18\x03 \x01(\x0b\x32\x35.com.mwr.diesel.api.Message.ReflectionRequest.Resolve\x12J\n\tconstruct\x18\x04 \x01(\x0b\x32\x37.com.mwr.diesel.api.Message.ReflectionRequest.Construct\x12\x44\n\x06invoke\x18\x05 \x01(\x0b\x32\x34.com.mwr.diesel.api.Message.ReflectionRequest.Invoke\x12O\n\x0cset_property\x18\x06 \x01(\x0b\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.SetProperty\x12O\n\x0cget_property\x18\x07 \x01(\x0b\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.GetProperty\x12\x44\n\x06\x64\x65lete\x18\x08 \x01(\x0b\x32\x34.com.mwr.diesel.api.Message.ReflectionRequest.Delete\x1a\x1c\n\x07Resolve\x12\x11\n\tclassname\x18\x01 \x01(\t\x1a\x80\x01\n\tConstruct\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x36\n\x08\x61rgument\x18\x02 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\x8d\x01\n\x06Invoke\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x0e\n\x06method\x18\x02 \x01(\t\x12\x36\n\x08\x61rgument\x18\x03 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\x91\x01\n\x0bSetProperty\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x10\n\x08property\x18\x02 \x01(\t\x12\x33\n\x05value\x18\x03 \x01(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\\\n\x0bGetProperty\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x10\n\x08property\x18\x02 \x01(\t\x1a\x45\n\x06\x44\x65lete\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\"u\n\x0bRequestType\x12\x0b\n\x07RESOLVE\x10\x01\x12\r\n\tCONSTRUCT\x10\x02\x12\n\n\x06INVOKE\x10\x03\x12\x10\n\x0cSET_PROPERTY\x10\x04\x12\x10\n\x0cGET_PROPERTY\x10\x05\x12\n\n\x06\x44\x45LETE\x10\x06\x12\x0e\n\nDELETE_ALL\x10\x07\x1a\xf8\x01\n\x12ReflectionResponse\x12\x12\n\nsession_id\x18\x01 \x02(\t\x12M\n\x06status\x18\x02 \x02(\x0e\x32=.com.mwr.diesel.api.Message.ReflectionResponse.ResponseStatus\x12\x34\n\x06result\x18\x03 \x01(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x12\x14\n\x0c\x65rrormessage\x18\x08 \x01(\t\"3\n\x0eResponseStatus\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\t\n\x05\x46\x41TAL\x10\x03\x1a\xd1\x02\n\rSystemRequest\x12I\n\x04type\x18\x01 \x02(\x0e\x32\x35.com.mwr.diesel.api.Message.SystemRequest.RequestType:\x04PING\x12\x32\n\x06\x64\x65vice\x18\x05 \x01(\x0b\x32\".com.mwr.diesel.api.Message.Device\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x10\n\x08password\x18\x08 \x01(\t\"\x9a\x01\n\x0bRequestType\x12\x08\n\x04PING\x10\x01\x12\x0f\n\x0b\x42IND_DEVICE\x10\x02\x12\x11\n\rUNBIND_DEVICE\x10\x03\x12\x10\n\x0cLIST_DEVICES\x10\x04\x12\x11\n\rSTART_SESSION\x10\x05\x12\x10\n\x0cSTOP_SESSION\x10\x06\x12\x13\n\x0fRESTART_SESSION\x10\x07\x12\x11\n\rLIST_SESSIONS\x10\x08\x1a\xc8\x03\n\x0eSystemResponse\x12\x45\n\x04type\x18\x01 \x02(\x0e\x32\x37.com.mwr.diesel.api.Message.SystemResponse.ResponseType\x12I\n\x06status\x18\x02 \x02(\x0e\x32\x39.com.mwr.diesel.api.Message.SystemResponse.ResponseStatus\x12\x33\n\x07\x64\x65vices\x18\x06 \x03(\x0b\x32\".com.mwr.diesel.api.Message.Device\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x15\n\rerror_message\x18\x08 \x01(\t\x12\x35\n\x08sessions\x18\t \x03(\x0b\x32#.com.mwr.diesel.api.Message.Session\"c\n\x0cResponseType\x12\x08\n\x04PONG\x10\x01\x12\t\n\x05\x42OUND\x10\x02\x12\x0b\n\x07UNBOUND\x10\x03\x12\x0f\n\x0b\x44\x45VICE_LIST\x10\x04\x12\x0e\n\nSESSION_ID\x10\x05\x12\x10\n\x0cSESSION_LIST\x10\x06\"(\n\x0eResponseStatus\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x1a\xf0\x02\n\x08\x41rgument\x12G\n\x04type\x18\x01 \x02(\x0e\x32\x31.com.mwr.diesel.api.Message.Argument.ArgumentType:\x06STRING\x12\x38\n\tprimitive\x18\x02 \x01(\x0b\x32%.com.mwr.diesel.api.Message.Primitive\x12\x0e\n\x06string\x18\x03 \x01(\t\x12;\n\x06object\x18\x04 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x30\n\x05\x61rray\x18\x05 \x01(\x0b\x32!.com.mwr.diesel.api.Message.Array\x12\x0c\n\x04\x64\x61ta\x18\x06 \x01(\x0c\"T\n\x0c\x41rgumentType\x12\x08\n\x04NULL\x10\x01\x12\r\n\tPRIMITIVE\x10\x02\x12\n\n\x06STRING\x10\x03\x12\n\n\x06OBJECT\x10\x04\x12\t\n\x05\x41RRAY\x10\x05\x12\x08\n\x04\x44\x41TA\x10\x06\x1a\xc0\x01\n\x05\x41rray\x12\x41\n\x04type\x18\x01 \x02(\x0e\x32+.com.mwr.diesel.api.Message.Array.ArrayType:\x06STRING\x12\x35\n\x07\x65lement\x18\x02 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\"=\n\tArrayType\x12\r\n\tPRIMITIVE\x10\x01\x12\n\n\x06STRING\x10\x02\x12\n\n\x06OBJECT\x10\x03\x12\t\n\x05\x41RRAY\x10\x04\x1aK\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x02(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x02(\t\x12\r\n\x05model\x18\x03 \x02(\t\x12\x10\n\x08software\x18\x04 \x02(\t\x1a$\n\x0fObjectReference\x12\x11\n\treference\x18\x01 \x01(\x05\x1a\xa5\x02\n\tPrimitive\x12\x41\n\x04type\x18\x01 \x02(\x0e\x32\x33.com.mwr.diesel.api.Message.Primitive.PrimitiveType\x12\x0c\n\x04\x62ool\x18\x02 \x01(\x08\x12\x0b\n\x03int\x18\x03 \x01(\x05\x12\x0c\n\x04long\x18\x04 \x01(\x03\x12\r\n\x05\x66loat\x18\x05 \x01(\x02\x12\x0c\n\x04\x62yte\x18\x06 \x01(\x05\x12\r\n\x05short\x18\x07 \x01(\x05\x12\x0e\n\x06\x64ouble\x18\x08 \x01(\x01\x12\x0c\n\x04\x63har\x18\t \x01(\x05\"b\n\rPrimitiveType\x12\x08\n\x04\x42OOL\x10\x01\x12\x07\n\x03INT\x10\x02\x12\x08\n\x04LONG\x10\x03\x12\t\n\x05\x46LOAT\x10\x04\x12\x08\n\x04\x42YTE\x10\x05\x12\t\n\x05SHORT\x10\x06\x12\n\n\x06\x44OUBLE\x10\x07\x12\x08\n\x04\x43HAR\x10\x08\x1a(\n\x07Session\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\tdevice_id\x18\x02 \x02(\t\"g\n\x0bMessageType\x12\x12\n\x0eSYSTEM_REQUEST\x10\x01\x12\x13\n\x0fSYSTEM_RESPONSE\x10\x02\x12\x16\n\x12REFLECTION_REQUEST\x10\x03\x12\x17\n\x13REFLECTION_RESPONSE\x10\x04\x42\x02H\x01')
+  serialized_pb=b'\n\x0eprotobuf.proto\x12\x12\x63om.mwr.diesel.api\"\x80\x1e\n\x07Message\x12\n\n\x02id\x18\x01 \x02(\x05\x12\x35\n\x04type\x18\x02 \x02(\x0e\x32\'.com.mwr.diesel.api.Message.MessageType\x12\x41\n\x0esystem_request\x18\x05 \x01(\x0b\x32).com.mwr.diesel.api.Message.SystemRequest\x12\x43\n\x0fsystem_response\x18\x06 \x01(\x0b\x32*.com.mwr.diesel.api.Message.SystemResponse\x12I\n\x12reflection_request\x18\x07 \x01(\x0b\x32-.com.mwr.diesel.api.Message.ReflectionRequest\x12K\n\x13reflection_response\x18\x08 \x01(\x0b\x32..com.mwr.diesel.api.Message.ReflectionResponse\x1a\x93\n\n\x11ReflectionRequest\x12\x12\n\nsession_id\x18\x01 \x02(\t\x12G\n\x04type\x18\x02 \x02(\x0e\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.RequestType\x12\x46\n\x07resolve\x18\x03 \x01(\x0b\x32\x35.com.mwr.diesel.api.Message.ReflectionRequest.Resolve\x12J\n\tconstruct\x18\x04 \x01(\x0b\x32\x37.com.mwr.diesel.api.Message.ReflectionRequest.Construct\x12\x44\n\x06invoke\x18\x05 \x01(\x0b\x32\x34.com.mwr.diesel.api.Message.ReflectionRequest.Invoke\x12O\n\x0cset_property\x18\x06 \x01(\x0b\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.SetProperty\x12O\n\x0cget_property\x18\x07 \x01(\x0b\x32\x39.com.mwr.diesel.api.Message.ReflectionRequest.GetProperty\x12\x44\n\x06\x64\x65lete\x18\x08 \x01(\x0b\x32\x34.com.mwr.diesel.api.Message.ReflectionRequest.Delete\x1a\x1c\n\x07Resolve\x12\x11\n\tclassname\x18\x01 \x01(\t\x1a\x80\x01\n\tConstruct\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x36\n\x08\x61rgument\x18\x02 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\x8d\x01\n\x06Invoke\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x0e\n\x06method\x18\x02 \x01(\t\x12\x36\n\x08\x61rgument\x18\x03 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\x91\x01\n\x0bSetProperty\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x10\n\x08property\x18\x02 \x01(\t\x12\x33\n\x05value\x18\x03 \x01(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x1a\\\n\x0bGetProperty\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x10\n\x08property\x18\x02 \x01(\t\x1a\x45\n\x06\x44\x65lete\x12;\n\x06object\x18\x01 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\"u\n\x0bRequestType\x12\x0b\n\x07RESOLVE\x10\x01\x12\r\n\tCONSTRUCT\x10\x02\x12\n\n\x06INVOKE\x10\x03\x12\x10\n\x0cSET_PROPERTY\x10\x04\x12\x10\n\x0cGET_PROPERTY\x10\x05\x12\n\n\x06\x44\x45LETE\x10\x06\x12\x0e\n\nDELETE_ALL\x10\x07\x1a\xf8\x01\n\x12ReflectionResponse\x12\x12\n\nsession_id\x18\x01 \x02(\t\x12M\n\x06status\x18\x02 \x02(\x0e\x32=.com.mwr.diesel.api.Message.ReflectionResponse.ResponseStatus\x12\x34\n\x06result\x18\x03 \x01(\x0b\x32$.com.mwr.diesel.api.Message.Argument\x12\x14\n\x0c\x65rrormessage\x18\x08 \x01(\t\"3\n\x0eResponseStatus\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\t\n\x05\x46\x41TAL\x10\x03\x1a\xd1\x02\n\rSystemRequest\x12I\n\x04type\x18\x01 \x02(\x0e\x32\x35.com.mwr.diesel.api.Message.SystemRequest.RequestType:\x04PING\x12\x32\n\x06\x64\x65vice\x18\x05 \x01(\x0b\x32\".com.mwr.diesel.api.Message.Device\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x10\n\x08password\x18\x08 \x01(\t\"\x9a\x01\n\x0bRequestType\x12\x08\n\x04PING\x10\x01\x12\x0f\n\x0b\x42IND_DEVICE\x10\x02\x12\x11\n\rUNBIND_DEVICE\x10\x03\x12\x10\n\x0cLIST_DEVICES\x10\x04\x12\x11\n\rSTART_SESSION\x10\x05\x12\x10\n\x0cSTOP_SESSION\x10\x06\x12\x13\n\x0fRESTART_SESSION\x10\x07\x12\x11\n\rLIST_SESSIONS\x10\x08\x1a\xc8\x03\n\x0eSystemResponse\x12\x45\n\x04type\x18\x01 \x02(\x0e\x32\x37.com.mwr.diesel.api.Message.SystemResponse.ResponseType\x12I\n\x06status\x18\x02 \x02(\x0e\x32\x39.com.mwr.diesel.api.Message.SystemResponse.ResponseStatus\x12\x33\n\x07\x64\x65vices\x18\x06 \x03(\x0b\x32\".com.mwr.diesel.api.Message.Device\x12\x12\n\nsession_id\x18\x07 \x01(\t\x12\x15\n\rerror_message\x18\x08 \x01(\t\x12\x35\n\x08sessions\x18\t \x03(\x0b\x32#.com.mwr.diesel.api.Message.Session\"c\n\x0cResponseType\x12\x08\n\x04PONG\x10\x01\x12\t\n\x05\x42OUND\x10\x02\x12\x0b\n\x07UNBOUND\x10\x03\x12\x0f\n\x0b\x44\x45VICE_LIST\x10\x04\x12\x0e\n\nSESSION_ID\x10\x05\x12\x10\n\x0cSESSION_LIST\x10\x06\"(\n\x0eResponseStatus\x12\x0b\n\x07SUCCESS\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x1a\xf0\x02\n\x08\x41rgument\x12G\n\x04type\x18\x01 \x02(\x0e\x32\x31.com.mwr.diesel.api.Message.Argument.ArgumentType:\x06STRING\x12\x38\n\tprimitive\x18\x02 \x01(\x0b\x32%.com.mwr.diesel.api.Message.Primitive\x12\x0e\n\x06string\x18\x03 \x01(\t\x12;\n\x06object\x18\x04 \x01(\x0b\x32+.com.mwr.diesel.api.Message.ObjectReference\x12\x30\n\x05\x61rray\x18\x05 \x01(\x0b\x32!.com.mwr.diesel.api.Message.Array\x12\x0c\n\x04\x64\x61ta\x18\x06 \x01(\x0c\"T\n\x0c\x41rgumentType\x12\x08\n\x04NULL\x10\x01\x12\r\n\tPRIMITIVE\x10\x02\x12\n\n\x06STRING\x10\x03\x12\n\n\x06OBJECT\x10\x04\x12\t\n\x05\x41RRAY\x10\x05\x12\x08\n\x04\x44\x41TA\x10\x06\x1a\xc0\x01\n\x05\x41rray\x12\x41\n\x04type\x18\x01 \x02(\x0e\x32+.com.mwr.diesel.api.Message.Array.ArrayType:\x06STRING\x12\x35\n\x07\x65lement\x18\x02 \x03(\x0b\x32$.com.mwr.diesel.api.Message.Argument\"=\n\tArrayType\x12\r\n\tPRIMITIVE\x10\x01\x12\n\n\x06STRING\x10\x02\x12\n\n\x06OBJECT\x10\x03\x12\t\n\x05\x41RRAY\x10\x04\x1aK\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x02(\t\x12\x14\n\x0cmanufacturer\x18\x02 \x02(\t\x12\r\n\x05model\x18\x03 \x02(\t\x12\x10\n\x08software\x18\x04 \x02(\t\x1a$\n\x0fObjectReference\x12\x11\n\treference\x18\x01 \x01(\x05\x1a\xa5\x02\n\tPrimitive\x12\x41\n\x04type\x18\x01 \x02(\x0e\x32\x33.com.mwr.diesel.api.Message.Primitive.PrimitiveType\x12\x0c\n\x04\x62ool\x18\x02 \x01(\x08\x12\x0b\n\x03int\x18\x03 \x01(\x05\x12\x0c\n\x04long\x18\x04 \x01(\x03\x12\r\n\x05\x66loat\x18\x05 \x01(\x02\x12\x0c\n\x04\x62yte\x18\x06 \x01(\x05\x12\r\n\x05short\x18\x07 \x01(\x05\x12\x0e\n\x06\x64ouble\x18\x08 \x01(\x01\x12\x0c\n\x04\x63har\x18\t \x01(\x05\"b\n\rPrimitiveType\x12\x08\n\x04\x42OOL\x10\x01\x12\x07\n\x03INT\x10\x02\x12\x08\n\x04LONG\x10\x03\x12\t\n\x05\x46LOAT\x10\x04\x12\x08\n\x04\x42YTE\x10\x05\x12\t\n\x05SHORT\x10\x06\x12\n\n\x06\x44OUBLE\x10\x07\x12\x08\n\x04\x43HAR\x10\x08\x1a(\n\x07Session\x12\n\n\x02id\x18\x01 \x02(\t\x12\x11\n\tdevice_id\x18\x02 \x02(\t\"g\n\x0bMessageType\x12\x12\n\x0eSYSTEM_REQUEST\x10\x01\x12\x13\n\x0fSYSTEM_RESPONSE\x10\x02\x12\x16\n\x12REFLECTION_REQUEST\x10\x03\x12\x17\n\x13REFLECTION_RESPONSE\x10\x04\x42\x02H\x01')
 
 
 
@@ -1188,83 +1188,83 @@ class Message(message.Message, metaclass=reflection.GeneratedProtocolMessageType
   class ReflectionRequest(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     class Resolve(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_RESOLVE
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.Resolve)
-    
+
     class Construct(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_CONSTRUCT
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.Construct)
-    
+
     class Invoke(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_INVOKE
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.Invoke)
-    
+
     class SetProperty(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_SETPROPERTY
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.SetProperty)
-    
+
     class GetProperty(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_GETPROPERTY
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.GetProperty)
-    
+
     class Delete(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
       DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST_DELETE
-      
+
       # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest.Delete)
     DESCRIPTOR = _MESSAGE_REFLECTIONREQUEST
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionRequest)
-  
+
   class ReflectionResponse(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_REFLECTIONRESPONSE
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ReflectionResponse)
-  
+
   class SystemRequest(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_SYSTEMREQUEST
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.SystemRequest)
-  
+
   class SystemResponse(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_SYSTEMRESPONSE
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.SystemResponse)
-  
+
   class Argument(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_ARGUMENT
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.Argument)
-  
+
   class Array(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_ARRAY
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.Array)
-  
+
   class Device(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_DEVICE
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.Device)
-  
+
   class ObjectReference(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_OBJECTREFERENCE
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.ObjectReference)
-  
+
   class Primitive(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_PRIMITIVE
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.Primitive)
-  
+
   class Session(message.Message, metaclass=reflection.GeneratedProtocolMessageType):
     DESCRIPTOR = _MESSAGE_SESSION
-    
+
     # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message.Session)
   DESCRIPTOR = _MESSAGE
-  
+
   # @@protoc_insertion_point(class_scope:com.mwr.diesel.api.Message)
 
 # @@protoc_insertion_point(module_scope)
